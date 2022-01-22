@@ -17,3 +17,6 @@ public class Main
 
 output:
 dcba
+
+Time Complexity:
+O(n)
