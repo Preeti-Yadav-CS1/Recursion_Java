@@ -1,0 +1,42 @@
+Print all subsequences of a string
+
+public class Main
+{
+    public static void subsequences(String str, int idx, String newString){
+        if(idx==str.length()){
+            System.out.println(newString);
+            return;
+        }
+        char currChar= str.charAt(idx);
+        // to be
+        subsequences(str, idx+1, newString+currChar);
+        
+        // not to be
+        subsequences(str, idx+1, newString);
+        
+        
+    }
+    
+	public static void main(String[] args) {
+		String str="abc";
+		subsequences(str,0,"");
+	}
+}
+
+Output:
+abc
+ab
+ac
+a
+bc
+b
+c
+
+👆here an empty string exits.
+
+time complexity:
+gp- geometric progression
+2^n + 2^(n-1) + 2^(n-2)+...+1
+GP = a(r^n-1)/(r-1)
+GP= 1(2^(n+1)-1)/(2-1)= 2^(n+1)-1 ~ O(2^n)
+n= no. of elements
