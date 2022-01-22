@@ -24,3 +24,7 @@ transfer of disc3 fromS to D
 transfer of disc1 fromH to S
 transfer of disc2 fromH to D
 transfer of disc1 fromS to D
+
+
+Time Complexity:
+O(2^n)
