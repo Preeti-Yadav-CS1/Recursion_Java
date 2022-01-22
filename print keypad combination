@@ -1,0 +1,50 @@
+0 .
+1 abc
+2 def
+3 ghi
+4 jkl
+5 mno
+6 pqrs
+7 tu
+8 vwx
+9 yz
+
+
+public class Main
+{
+    public static String[] keypad= {".","abc","def", "ghi", "jkl","mno","pqrs", "tu", "vwx", "yz"};
+    public static void printCombination(String str, int idx, String Combination){
+        
+    if (idx==str.length()){
+        System.out.println(Combination);
+        return;
+    }    
+    char currchar= str.charAt(idx);
+    String mapping= keypad[currchar-'0'];
+    
+    for(int i=0; i<mapping.length();i++){
+        printCombination(str, idx+1, Combination+mapping.charAt(i));
+    }
+    }
+    
+	public static void main(String[] args) {
+		String str="23";
+		printCombination(str,0,"");
+	}
+}
+
+output:
+dg
+dh
+di
+eg
+eh
+ei
+fg
+fh
+fi
+
+
+time complexity:
+O(4^n)
+n: lenght of string
